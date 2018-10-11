@@ -11,26 +11,34 @@ import UIKit
 class ConcentrationVC: UIViewController {
     
     lazy var game = ConcentrationBR(numberOfPairsOfCardes: (groupOfCards.count + 1) / 2)
-  
     
     
-
-    @IBOutlet weak var flipsCounterLBL: UILabel!
-    @IBOutlet var groupOfCards: [Button]!
-    var flipCounter = 0 {
+    
+    
+    @IBOutlet private  weak var flipsCounterLBL: UILabel!
+    @IBOutlet private var groupOfCards: [Button]!
+    
+    private var flipCounter = 0 {
         didSet {
             flipsCounterLBL.text = "Flips = \(flipCounter) "
         }
     }
     
-    @IBAction func cardTouched(_ sender: Button) {
-        flipCounter += 1
+    @IBAction private func newgame(_ sender: UIButton) {
+        game.cards = game.Newgame()
+        flipCounter = 0
+        updateViewfromModel()
+    }
+    @IBAction private func cardTouched(_ sender: Button) {
+        flipCounter = updateFlipCounter(index: groupOfCards.index(of: sender)!, counter: flipCounter)
         if let cardNumber = groupOfCards.index(of: sender) {
             game.choosecard(by: cardNumber)
             updateViewfromModel()
+            renewGame()
         }
-     }
-    func updateViewfromModel() {
+        
+    }
+   private func updateViewfromModel() {
         for index in groupOfCards.indices {
             let card = game.cards[index]
             let button = groupOfCards[index]
@@ -40,37 +48,40 @@ class ConcentrationVC: UIViewController {
             } else {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
                 button.setTitle("", for: UIControlState.normal)
-               
+                
             }
         }
         
     }
-   
     
-    
-    
-    
-    var emojies = ["🧟‍♀️","🧛‍♂️","😈","👻","👹","👿","💀","🧟‍♂️","🧙🏼‍"]
-    
-    var emojieForCard = [Int:String]()
-    
-    func setemoji(for card: Card) -> String {
+   private var emojies = ["🧟‍♀️","🧛‍♂️","😈","👻","👹","👿","💀","🧟‍♂️","🧙🏼‍"]
+   private var emojieForCard = [Int:String]()
+    private func setemoji(for card: Card) -> String {
         if emojieForCard[card.identifier] == nil, emojies.count > 0 {
-            let randomindec = Int(arc4random_uniform(UInt32(emojies.count)))
-            emojieForCard[card.identifier] = emojies.remove(at: randomindec)
+            emojieForCard[card.identifier] = emojies.remove(at: emojies.count.arc4Random)
         }
-       return emojieForCard[card.identifier] ?? "?"
-        
+        return emojieForCard[card.identifier] ?? "?"
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    private func renewGame() {
+        var k = 0
+        for i in game.cards.indices {
+            if  game.cards[i].isMatched {
+                k += 1
+            }
+            if k ==  (groupOfCards.count){
+                game.cards = game.Newgame()
+                flipCounter = 0
+                updateViewfromModel()
+            }
+        }
+    }
+    private func updateFlipCounter(index:Int, counter: Int) -> Int {
+        var k = counter
+        if !game.cards[index].isFaceUp && !game.cards[index].isMatched {
+            k += 1
+        }
+        return k
+    }
+
 }
+  
