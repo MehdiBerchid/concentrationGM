@@ -12,6 +12,11 @@
 		477CE311212C55A8000E56E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477CE30F212C55A8000E56E8 /* Main.storyboard */; };
 		477CE313212C55AA000E56E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477CE312212C55AA000E56E8 /* Assets.xcassets */; };
 		477CE316212C55AA000E56E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477CE314212C55AA000E56E8 /* LaunchScreen.storyboard */; };
+		477CE324212C5A7C000E56E8 /* feast-of-flesh-bb.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 477CE323212C5A7C000E56E8 /* feast-of-flesh-bb.regular.ttf */; };
+		477CE326212C5AE8000E56E8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE325212C5AE8000E56E8 /* Button.swift */; };
+		477CE328212C624D000E56E8 /* ConcentrationBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE327212C624D000E56E8 /* ConcentrationBR.swift */; };
+		477CE32A212C62B8000E56E8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE329212C62B8000E56E8 /* Card.swift */; };
+		47DA55A2216EA35B009F8847 /* extantions .swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA55A1216EA35B009F8847 /* extantions .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		477CE312212C55AA000E56E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		477CE315212C55AA000E56E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		477CE317212C55AA000E56E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477CE323212C5A7C000E56E8 /* feast-of-flesh-bb.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "feast-of-flesh-bb.regular.ttf"; sourceTree = "<group>"; };
+		477CE325212C5AE8000E56E8 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		477CE327212C624D000E56E8 /* ConcentrationBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationBR.swift; sourceTree = "<group>"; };
+		477CE329212C62B8000E56E8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		47DA55A1216EA35B009F8847 /* extantions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extantions .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		477CE30A212C55A8000E56E8 /* ConcentrationGM */ = {
 			isa = PBXGroup;
 			children = (
+				47DA55A0216EA335009F8847 /* supporting Files */,
 				477CE321212C5659000E56E8 /* Views */,
 				477CE320212C5650000E56E8 /* Model */,
 				477CE31F212C5615000E56E8 /* Controller */,
@@ -62,6 +73,7 @@
 				477CE312212C55AA000E56E8 /* Assets.xcassets */,
 				477CE314212C55AA000E56E8 /* LaunchScreen.storyboard */,
 				477CE317212C55AA000E56E8 /* Info.plist */,
+				477CE322212C5A59000E56E8 /* Font */,
 			);
 			path = ConcentrationGM;
 			sourceTree = "<group>";
@@ -77,6 +89,8 @@
 		477CE320212C5650000E56E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				477CE327212C624D000E56E8 /* ConcentrationBR.swift */,
+				477CE329212C62B8000E56E8 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -84,8 +98,25 @@
 		477CE321212C5659000E56E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				477CE325212C5AE8000E56E8 /* Button.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		477CE322212C5A59000E56E8 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				477CE323212C5A7C000E56E8 /* feast-of-flesh-bb.regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		47DA55A0216EA335009F8847 /* supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47DA55A1216EA35B009F8847 /* extantions .swift */,
+			);
+			path = "supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +151,7 @@
 				TargetAttributes = {
 					477CE307212C55A8000E56E8 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -148,6 +180,7 @@
 			files = (
 				477CE316212C55AA000E56E8 /* LaunchScreen.storyboard in Resources */,
 				477CE313212C55AA000E56E8 /* Assets.xcassets in Resources */,
+				477CE324212C5A7C000E56E8 /* feast-of-flesh-bb.regular.ttf in Resources */,
 				477CE311212C55A8000E56E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +193,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				477CE30E212C55A8000E56E8 /* ConcentrationVC.swift in Sources */,
+				47DA55A2216EA35B009F8847 /* extantions .swift in Sources */,
+				477CE326212C5AE8000E56E8 /* Button.swift in Sources */,
+				477CE32A212C62B8000E56E8 /* Card.swift in Sources */,
 				477CE30C212C55A8000E56E8 /* AppDelegate.swift in Sources */,
+				477CE328212C624D000E56E8 /* ConcentrationBR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +349,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lsc.ConcentrationGM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -329,7 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lsc.ConcentrationGM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
