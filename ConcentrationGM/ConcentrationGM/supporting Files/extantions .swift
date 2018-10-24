@@ -20,4 +20,14 @@ extension Int {
         }
     }
 }
+extension Array {
+    var shuffleList : [Any] {
+        var array = self
+        var shuffledlist = [Any]()
+        for _ in 0..<array.count {
+            let randomNumbre = array.count.arc4Random
+            shuffledlist.append(array.remove(at: randomNumbre))
+        }; return shuffledlist
+    }
+}
 

@@ -9,17 +9,16 @@
 import Foundation
 class ConcentrationBR {
     var cards = [Card]()
-    var indexOfOneAndOnlyCardFaceUp : Int? {
+    private var indexOfOneAndOnlyCardFaceUp : Int? {
         get {
             var foundIndex : Int?
             for index in cards.indices {
                 if cards[index].isFaceUp  {
                     if foundIndex == nil {
                         foundIndex = index
-                    
-                } else {
-                    return nil
-                }
+                    } else {
+                        return nil
+                    }
                 }
             }
             return foundIndex
@@ -30,40 +29,59 @@ class ConcentrationBR {
             }
         }
     }
+    private(set) var flipsnumbre = 0
+    private(set) var scoorNumbre = 0
+    
+    private func flipCounting(by index: Int) {
+        if !cards[index].isMatched && !cards[index].isFaceUp {
+            flipsnumbre += 1
+        }
+    }
+    private var listOfFlipedCard = [Int]()
+    private func penaltyCounting(by index: Int){
+        if  listOfFlipedCard.contains(cards[index].identifier) && !cards[index].isMatched || cards[index].isTheCardfliped && !cards[index].isMatched {
+            scoorNumbre = scoorNumbre - 1
+        } else {
+            listOfFlipedCard.append(cards[index].identifier)
+            cards[index].isTheCardfliped = true
+
+        }
+    }
     func choosecard(by index:Int) {
+        flipCounting(by: index)
         if !cards[index].isMatched {
             if let indexOfMatchingCard = indexOfOneAndOnlyCardFaceUp , indexOfMatchingCard != index {
                 if cards[index].identifier == cards[indexOfMatchingCard].identifier {
                     cards[index].isMatched = true
                     cards[indexOfMatchingCard].isMatched = true
+                    scoorNumbre += 2
                 }
+                penaltyCounting(by: index)
                 cards[index].isFaceUp = true
             } else {
                 indexOfOneAndOnlyCardFaceUp = index
             }
         }
     }
-    func shuffle(card : [Card]) -> [Card]{
-        var cards = card
-        var shuffledCard = [Card]()
-        for _ in 0..<cards.count {
-            let randomNumbre = Int(arc4random_uniform(UInt32(cards.count)))
-            shuffledCard.append(cards.remove(at: randomNumbre))
-        }; return shuffledCard
-    }
+    
     func Newgame() -> [Card] {
-        var newCards = shuffle(card:cards)
+        var newCards = cards.shuffleList as! [Card]
+        listOfFlipedCard = [Int]()
+        flipsnumbre = 0
+        scoorNumbre = 0
         for i in newCards.indices {
             newCards[i].isFaceUp = false
             newCards[i].isMatched = false
+            newCards[i].isTheCardfliped = false
         }
         return newCards
     }
+    
     init(numberOfPairsOfCardes : Int) {
         for _ in 0..<numberOfPairsOfCardes {
             let card = Card()
             cards += [card,card]
-            cards = shuffle(card: cards)
+            cards =  cards.shuffleList as! [Card]
         }
     }
 }

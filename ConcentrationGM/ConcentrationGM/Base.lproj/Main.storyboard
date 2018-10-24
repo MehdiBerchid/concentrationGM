@@ -196,6 +196,12 @@
                                     <action selector="newgame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zq9-OT-3b1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="game score = 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-SH-pXh">
+                                <rect key="frame" x="70.5" y="501" width="234.5" height="40"/>
+                                <fontDescription key="fontDescription" name="FeastofFleshBB" family="Feast of Flesh BB" pointSize="33"/>
+                                <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -204,9 +210,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DF5-eD-1Hz" secondAttribute="bottom" constant="254" id="DcD-Yz-asl"/>
                             <constraint firstItem="t7M-Dc-hch" firstAttribute="top" secondItem="DF5-eD-1Hz" secondAttribute="bottom" constant="16" id="F0j-A0-aXa"/>
                             <constraint firstItem="Kai-ar-Nib" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F2g-eb-Kt2"/>
+                            <constraint firstItem="Kai-ar-Nib" firstAttribute="top" secondItem="6lo-SH-pXh" secondAttribute="bottom" constant="8" id="Hbl-Pz-gzW"/>
                             <constraint firstItem="DF5-eD-1Hz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LMe-UV-S2E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t7M-Dc-hch" secondAttribute="trailing" constant="116" id="bBH-ah-Pdh"/>
                             <constraint firstItem="Kai-ar-Nib" firstAttribute="top" secondItem="t7M-Dc-hch" secondAttribute="bottom" constant="68" id="dsB-0N-98R"/>
+                            <constraint firstItem="6lo-SH-pXh" firstAttribute="top" secondItem="t7M-Dc-hch" secondAttribute="bottom" constant="20" id="grF-BX-WJ2"/>
+                            <constraint firstItem="6lo-SH-pXh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hA6-ZE-cUD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kai-ar-Nib" secondAttribute="bottom" constant="36" id="oNU-8E-rI1"/>
                             <constraint firstItem="DF5-eD-1Hz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="yUl-tU-CYF"/>
                         </constraints>
@@ -214,6 +223,7 @@
                     </view>
                     <connections>
                         <outlet property="flipsCounterLBL" destination="Kai-ar-Nib" id="MOa-rq-O53"/>
+                        <outlet property="gameScore" destination="6lo-SH-pXh" id="vG2-2p-XTT"/>
                         <outletCollection property="groupOfCards" destination="ptK-o5-h2Y" collectionClass="NSMutableArray" id="YKP-RN-AjG"/>
                         <outletCollection property="groupOfCards" destination="tCy-8t-bQJ" collectionClass="NSMutableArray" id="g2f-h0-eqK"/>
                         <outletCollection property="groupOfCards" destination="qWF-wv-CHv" collectionClass="NSMutableArray" id="r18-MB-4cY"/>

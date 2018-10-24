@@ -8,8 +8,9 @@
 
 import Foundation
 struct Card {
+    var isTheCardfliped = false
     var isFaceUp = false
-    var isMatched = false
+     var isMatched = false
     var identifier: Int
     static var cardIdentifier = 0
     static func  generatUniqueIdenifier()-> Int {
