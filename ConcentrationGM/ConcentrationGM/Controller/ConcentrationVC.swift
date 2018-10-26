@@ -18,6 +18,7 @@ class ConcentrationVC: UIViewController {
         updateViewfromModel()
     }
     @IBAction private func cardTouched(_ sender: Button) {
+        print(game.numberOfMatchedCards)
         if let cardNumber = groupOfCards.index(of: sender) {
             game.choosecard(by: cardNumber)
             updateViewfromModel()
@@ -56,18 +57,14 @@ class ConcentrationVC: UIViewController {
         return emojieForCard[card.identifier] ?? "?"
     }
     private func restGame() {
-        var k = 0
-        for i in game.cards.indices {
-            if  game.cards[i].isMatched {
-                k += 1
-            }
-            if k ==  (groupOfCards.count){
+            if game.numberOfMatchedCards ==  (groupOfCards.count){
                 game.cards = game.Newgame()
                 updateViewfromModel()
+                print(game.numberOfMatchedCards)
             }
         }
     }
-}
+
 
 
 

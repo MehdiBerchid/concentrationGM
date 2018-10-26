@@ -9,6 +9,8 @@
 import Foundation
 class ConcentrationBR {
     var cards = [Card]()
+    private(set) var numberOfMatchedCards = 0
+
     private var indexOfOneAndOnlyCardFaceUp : Int? {
         get {
             var foundIndex : Int?
@@ -48,13 +50,16 @@ class ConcentrationBR {
         }
     }
     func choosecard(by index:Int) {
-        flipCounting(by: index)
-        if !cards[index].isMatched {
+         flipCounting(by: index)
+            if !cards[index].isMatched {
             if let indexOfMatchingCard = indexOfOneAndOnlyCardFaceUp , indexOfMatchingCard != index {
                 if cards[index].identifier == cards[indexOfMatchingCard].identifier {
                     cards[index].isMatched = true
                     cards[indexOfMatchingCard].isMatched = true
                     scoorNumbre += 2
+                    numberOfMatchedCards = numberOfMatchedCards + 2
+                    
+                    
                 }
                 penaltyCounting(by: index)
                 cards[index].isFaceUp = true
@@ -63,7 +68,7 @@ class ConcentrationBR {
             }
         }
     }
-    
+   
     func Newgame() -> [Card] {
         var newCards = cards.shuffleList as! [Card]
         listOfFlipedCard = [Int]()
@@ -76,6 +81,7 @@ class ConcentrationBR {
         }
         return newCards
     }
+    
     
     init(numberOfPairsOfCardes : Int) {
         for _ in 0..<numberOfPairsOfCardes {
