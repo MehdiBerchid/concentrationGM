@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473474FA21A875D7002D95C6 /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473474F921A875D7002D95C6 /* theme.swift */; };
 		477CE30C212C55A8000E56E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE30B212C55A8000E56E8 /* AppDelegate.swift */; };
 		477CE30E212C55A8000E56E8 /* ConcentrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE30D212C55A8000E56E8 /* ConcentrationVC.swift */; };
 		477CE311212C55A8000E56E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477CE30F212C55A8000E56E8 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		473474F921A875D7002D95C6 /* theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
 		477CE308212C55A8000E56E8 /* ConcentrationGM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcentrationGM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		477CE30B212C55A8000E56E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		477CE30D212C55A8000E56E8 /* ConcentrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationVC.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				477CE325212C5AE8000E56E8 /* Button.swift */,
+				473474F921A875D7002D95C6 /* theme.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				47DA55A2216EA35B009F8847 /* extantions .swift in Sources */,
 				477CE326212C5AE8000E56E8 /* Button.swift in Sources */,
 				477CE32A212C62B8000E56E8 /* Card.swift in Sources */,
+				473474FA21A875D7002D95C6 /* theme.swift in Sources */,
 				477CE30C212C55A8000E56E8 /* AppDelegate.swift in Sources */,
 				477CE328212C624D000E56E8 /* ConcentrationBR.swift in Sources */,
 			);

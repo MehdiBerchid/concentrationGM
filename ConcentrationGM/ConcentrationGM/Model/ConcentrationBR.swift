@@ -74,6 +74,7 @@ class ConcentrationBR {
         listOfFlipedCard = [Int]()
         flipsnumbre = 0
         scoorNumbre = 0
+        numberOfMatchedCards = 0
         for i in newCards.indices {
             newCards[i].isFaceUp = false
             newCards[i].isMatched = false
