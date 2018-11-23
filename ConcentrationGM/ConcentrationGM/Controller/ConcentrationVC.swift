@@ -60,7 +60,6 @@ class ConcentrationVC: UIViewController {
             if game.numberOfMatchedCards ==  (groupOfCards.count){
                 game.cards = game.Newgame()
                 updateViewfromModel()
-                print(game.numberOfMatchedCards)
             }
         }
     }

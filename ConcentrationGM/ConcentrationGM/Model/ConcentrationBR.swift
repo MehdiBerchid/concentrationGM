@@ -8,7 +8,7 @@
 
 import Foundation
 class ConcentrationBR {
-    var cards = [Card]()
+     var cards = [Card]()
     private(set) var numberOfMatchedCards = 0
 
     private var indexOfOneAndOnlyCardFaceUp : Int? {
